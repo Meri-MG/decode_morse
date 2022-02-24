@@ -21,3 +21,14 @@ def decode_char(char)
     str
  end
  
+ def decode(morse_message)
+   words = ''
+   morse_message.split('  ').each do |word|
+      words += (decode_word(word) + " ")
+   end
+   words
+end
+puts decode_char(".-")
+puts decode_word("--- ..-. /")
+puts decode("-- -.--   -. .- -- .")
+puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...")
